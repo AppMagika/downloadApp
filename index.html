@@ -11,13 +11,13 @@
 
             // 1. REINDIRIZZAMENTO iOS (iPhone / iPad)
             if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                window.location.href = "https://apple.com"; // Sostituisci con il link del tuo App Store
+                window.location.href = "https://apps.apple.com/us/app/spheradice/id6806797419"; // Sostituisci con il link del tuo App Store
                 return;
             }
 
             // 2. REINDIRIZZAMENTO ANDROID
             if (/android/i.test(userAgent)) {
-                window.location.href = "https://google.com"; // Sostituisci con il tuo pacchetto Android
+                window.location.href = "https://play.google.com/store/apps/details?id=it.appmagika.ShakeSphere"; // Sostituisci con il tuo pacchetto Android
                 return;
             }
 
