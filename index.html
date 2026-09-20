@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download App</title>
+    
+    <script type="text/javascript">
+        (function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // 1. REINDIRIZZAMENTO iOS (iPhone / iPad)
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apple.com"; // Sostituisci con il link del tuo App Store
+                return;
+            }
+
+            // 2. REINDIRIZZAMENTO ANDROID
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://google.com"; // Sostituisci con il tuo pacchetto Android
+                return;
+            }
+
+            // 3. FALLBACK DESKTOP (Se aprono il link da PC/Mac, non li manda sugli store ma mostra la pagina qui sotto)
+        })();
+    </script>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; color: #333; }
+        .btn { display: inline-block; padding: 12px 24px; margin: 10px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .btn-android { background: #3DDC84; color: #000; }
+        .btn-ios { background: #000; color: #fff; }
+    </style>
+</head>
+<body>
+    <h1>Scarica la nostra App</h1>
+    <p>Se il reindirizzamento automatico non funziona, seleziona il tuo store:</p>
+    
+    <!-- Pulsanti manuali di emergenza se il redirect automatico fallisce o se sono su PC -->
+    <a href="https://google.com" class="btn btn-android">Scarica per Android</a>
+    <a href="https://apple.com" class="btn btn-ios">Scarica per iOS</a>
+</body>
+</html>
